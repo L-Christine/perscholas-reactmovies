@@ -27,10 +27,11 @@ const Form = (props) => {
     const handleSubmit = (e) => {
         e.preventDefault() //stop the form from refreshing the page
         movieSearch(formData.searchTerm)
+        setFormData({searchTerm:''})
     }
     return (
         <div>
-            <form onChange={handleSubmit}>
+            <form onSubmit={handleSubmit}>
                 <input type='text' value={formData.searchTerm} onChange={handleChange} name="searchTerm" required/>
 
                 <input type='submit' value='search' /> 
